@@ -1,6 +1,7 @@
 var forIn = require('for-in'),
     xobj = require('xhr'),
-    XhrError = require('xhrerror');
+    XhrError = require('xhrerror'),
+	queryBuilder = require('querystring');
 
 function noop() { }
 
@@ -9,6 +10,8 @@ function xhr(options, callback, errback) {
 
   if(Object.prototype.toString.call(options) == '[object String]') {
     options = { url: options };
+  } else if(options.method !== 'POST' && options.data) {
+	options.url = queryBuilder.buildUrl(options.url, options.data);
   }
 
   req.open(options.method || 'GET', options.url, true);

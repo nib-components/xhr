@@ -2,7 +2,7 @@
   "name": "xhr",
   "repo": "matthewp/xhr",
   "description": "Tiny, simple, xhr requests.",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "keywords": [
     "ajax",
     "xmlhttprequest",
@@ -11,6 +11,7 @@
   "dependencies": {
     "matthewp/xhrerror": "*",
     "kewah/for-in": "*",
+	"nib-health-funds/querystring" : "*",
     "yields/xhr": "*"
   },
   "development": {},
